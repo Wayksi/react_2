@@ -1,6 +1,6 @@
 import React from "react";
-import Logo from "/src/components/ui/Logo/Logo";
-import Nav from "/src/components/ui/Nav/Nav";
+import Logo from "@ui/Logo/Logo";
+import Nav from "@layout/Nav/Nav";
 import "./style.css";
 
 function Header () {

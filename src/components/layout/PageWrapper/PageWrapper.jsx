@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "/src/components/layout/Header/Header";
-import Footer from "/src/components/layout/Footer/Footer";
-import MainPage from "/src/components/pages/MainPage/MainPage";
+import Header from "@layout/Header/Header";
+import Footer from "@layout/Footer/Footer";
+import MainPage from "@pages/MainPage/MainPage";
 import "./style.css";
 
 function PageWrapper() {
@@ -9,7 +9,7 @@ function PageWrapper() {
         <>
             <Header />
             <main className="page-wrapper__main">
-                <PageWrapper />
+                <MainPage />
             </main>
             <Footer />
         </>
