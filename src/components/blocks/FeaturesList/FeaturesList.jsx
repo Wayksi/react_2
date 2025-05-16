@@ -4,7 +4,8 @@ import Button from "@ui/Button/Button";
 import FeatureCard from "@ui/FeatureCard/FeatureCard";
 import "./style.css";
 
-function FeaturesList() {
+// eslint-disable-next-line no-unused-vars
+function FeaturesList({ features }) {
     return (
         <section className="features">
             <Title>Почему фермерские продукты лучше?</Title>

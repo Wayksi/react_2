@@ -16,6 +16,7 @@ export default defineConfig({
       '@blocks': resolve(__dirname, 'src/components/blocks'),
       '@pages': resolve(__dirname, 'src/components/pages'),
       '@assets': resolve(__dirname, 'src/assets'),
+      '@mocks': resolve(__dirname, 'src/mocks'),
     },
   },
 });
