@@ -15,6 +15,7 @@ export default defineConfig({
       '@layout': resolve(__dirname, 'src/components/layout'),
       '@blocks': resolve(__dirname, 'src/components/blocks'),
       '@pages': resolve(__dirname, 'src/components/pages'),
+      '@assets': resolve(__dirname, 'src/assets'),
     },
   },
 });

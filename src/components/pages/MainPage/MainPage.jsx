@@ -3,7 +3,9 @@ import About from "@blocks/About/About";
 
 function MainPage() {
   return (
-    <About />
+    <>
+      <About />
+    </>
   );
 }
 
