@@ -2,6 +2,7 @@ export const defaultTheme = {
   colorBlackForText: "#333333",
   colorWhite: "#ffffff",
   colorGray: "#f6f6f6",
+  backgroundColorBlue: "#d8ecfe",
   colorForLightBackground: "#fff6d9",
   colorForDarkBackground: "#ffeead",
   colorForNewIcon: "#ffb334",
