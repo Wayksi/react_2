@@ -7,7 +7,7 @@ import "./style.css";
 function FeaturesList({ features }) {
     return features && features.length ? (
         <section className="features">
-            <Title>Почему фермерские продукты лучше?</Title>
+            <Title as="h2">Почему фермерские продукты лучше?</Title>
             <ul className="features__list">
                 {features.map((feature) => (
                     <li className="features__item" key={feature.id}>

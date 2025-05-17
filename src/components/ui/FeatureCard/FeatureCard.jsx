@@ -1,6 +1,5 @@
 import React from "react";
-import Title from "@ui/Title/Title";
-import { TitleSize } from "@ui/Title/titleSize";
+import Title, { TitleSize } from "@ui/Title/Title";
 import "./style.css";
 
 function FeatureCard({ title, owner, about, isNegative, image }) {
@@ -16,7 +15,7 @@ function FeatureCard({ title, owner, about, isNegative, image }) {
                     <span className={`feature__owner${isNegative ? " feature__owner_negative" : ""}`}>
                         {owner}
                     </span>
-                    <Title size={TitleSize.EXTRA_SMALL}>{title}</Title>
+                    <Title size={TitleSize.EXTRA_SMALL} as="h3">{title}</Title>
                 </div>
             </header>
             <p className="feature__text" dangerouslySetInnerHTML={{ __html: about }} />
