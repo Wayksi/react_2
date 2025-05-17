@@ -4,7 +4,7 @@ import Button from "@ui/Button/Button";
 function Nav() {
     return (
         <nav>
-            <Button>Купить</Button>
+            <Button link="/buy">Купить</Button>
         </nav>
     );
 }

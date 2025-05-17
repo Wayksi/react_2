@@ -2,15 +2,15 @@ import React from "react";
 import Header from "@layout/Header/Header";
 import Footer from "@layout/Footer/Footer";
 import MainPage from "@pages/MainPage/MainPage";
-import "./style.css";
+import { Main } from "./style";
 
 function PageWrapper({ features }) {
     return (
         <>
             <Header />
-            <main className="page-wrapper__main">
+            <Main>
                 <MainPage features={features} />
-            </main>
+            </Main>
             <Footer />
         </>
     );
