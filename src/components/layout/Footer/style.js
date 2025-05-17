@@ -14,7 +14,7 @@ export const StyledFooter = styled.footer`
   margin: 0 auto;
   padding-top: 0;
   padding-bottom: 0;
-  height: 79px;
+  height: ${(props) => props.theme.footerHeight};
   background-color: ${(props) => props.theme.colorWhite};
   justify-content: space-between;
   align-items: center;

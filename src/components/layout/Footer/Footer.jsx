@@ -6,7 +6,7 @@ function Footer() {
     return (
         <StyledFooter>
         <Logo />
-        <Copyright className="footer__copyright">Создано 2021</Copyright>
+        <Copyright>Создано 2021</Copyright>
     </StyledFooter>
     );
 }
