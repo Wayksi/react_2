@@ -1,13 +1,13 @@
 import React from "react";
-import logo from "/src/assets/logo.svg";
-import "./style.css";
+import LogoIcon from "/src/assets/logo.svg?react";
+import { StyledLogo, Text } from "./style";
 
 function Logo () {
     return (
-        <a href="/" className="logo__link">
-            <img src={logo} alt="Логотип" />
-            <span className="logo__text">Фермерские продукты</span>
-        </a>
+        <StyledLogo href="/">
+            <LogoIcon />
+            <Text>Фермерские продукты</Text>
+        </StyledLogo>
     );
 }
 
