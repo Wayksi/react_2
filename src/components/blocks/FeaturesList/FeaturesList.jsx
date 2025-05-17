@@ -10,8 +10,8 @@ function FeaturesList({ features }) {
             <Title>Почему фермерские продукты лучше?</Title>
             <ul className="features__list">
                 {features.map((feature) => (
-                    <li className="features__item">
-                        <FeatureCard feature={feature} />
+                    <li className="features__item" key={feature.id}>
+                        <FeatureCard {...feature} />
                     </li>
                 ))}
             </ul>
