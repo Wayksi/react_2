@@ -4,19 +4,20 @@ import Button from "@ui/Button/Button";
 import FeatureCard from "@ui/FeatureCard/FeatureCard";
 import "./style.css";
 
-// eslint-disable-next-line no-unused-vars
 function FeaturesList({ features }) {
-    return (
+    return features && features.length ? (
         <section className="features">
             <Title>Почему фермерские продукты лучше?</Title>
             <ul className="features__list">
-                <li className="features__item">
-                    <FeatureCard />
-                </li>
+                {features.map((feature) => (
+                    <li className="features__item">
+                        <FeatureCard feature={feature} />
+                    </li>
+                ))}
             </ul>
             <Button>Купить</Button>
         </section>
-    );
+    ) : null;
 }
 
 export default FeaturesList;
