@@ -5,6 +5,8 @@ export const defaultTheme = {
   backgroundColorBlue: "#d8ecfe",
   colorForLightBackground: "#fff6d9",
   colorForDarkBackground: "#ffeead",
+  panelBackgroundColorDanger: "#f75531",
+  panelBackgroundColor: "#88aa4d",
   colorForNewIcon: "#ffb334",
   colorForSoftIcon: "#7fc92e",
   buttonColor: "#fc9b27",
