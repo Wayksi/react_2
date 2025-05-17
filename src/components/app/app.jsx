@@ -1,9 +1,14 @@
 import React from "react";
 import PageWrapper from "/src/components/layout/PageWrapper/PageWrapper";
 import features from "@mocks/features";
-import "./style.css";
+import { GlobalStyle } from "./style";
 
 export default function App() {
-    return <PageWrapper features={features}/>;
+    return (
+      <>
+        <GlobalStyle />
+        <PageWrapper features={features}/>;
+      </>
+    )
   }
   
