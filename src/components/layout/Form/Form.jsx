@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { StyledForm, StyledFieldSet, StyledLegend } from "./style";
 import ProductCheckBox from "@ui/ProductCheckBox/ProductCheckBox";
+import TextInput from "@ui/TextInput/TextInput";
+import Button from "@ui/Button/Button";
+import Price from "@ui/Price/Price";
 
 const products = [
     "Филе бедра цыпленка",
@@ -46,6 +49,16 @@ function Form() {
                         onChange={handleChange}
                 />
                 ))}                
+            </StyledFieldSet>
+            <StyledFieldSet>
+                <StyledLegend>Сделать заказ</StyledLegend>
+                <TextInput
+                    name="mail"
+                    placeholder="Введите адрес доставки"                    
+                    onChange={handleChange}
+                />
+                <Price />
+                <Button>Купить</Button>
             </StyledFieldSet>
         </StyledForm>
     );

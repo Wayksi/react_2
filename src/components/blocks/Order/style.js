@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Section, Ul } from "@components/styled";
 
 export const StyledOrder = styled.section`
     display: grid;
