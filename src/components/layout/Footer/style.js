@@ -23,8 +23,8 @@ export const StyledFooter = styled.footer`
 
 export const Copyright = styled.span`
   min-width: 148px;
-    font-size: ${(props) => props.theme.fontSizeDefault};
-    vertical-align: middle;
-    text-align: right;
+  font-size: ${(props) => props.theme.fontSizeDefault};
+  vertical-align: middle;
+  text-align: right;
 `;
   
