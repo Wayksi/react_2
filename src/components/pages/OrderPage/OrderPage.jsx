@@ -1,8 +1,8 @@
 import React from "react";
 import Order from "@blocks/Order/Order";
 
-export default function OrderPage() {
+export default function OrderPage({ products }) {
     return (
-        <Order />
+        <Order products={products} />
     );
 }

@@ -1,0 +1,57 @@
+const productImages = import.meta.glob('@assets/product-card/*png', {
+  eager: true,
+  import: 'default',
+});
+
+const imageMap = Object.fromEntries(
+  Object.entries(productImages).map(([path, src]) => {
+    const filename = path.split('/').pop().replace('.png', '');
+    return [filename, src]
+  })
+);
+
+const products = [
+    {
+        id: 0,
+        imageName: 'chicken-thigh',
+        alt: "Филе бедра цыпленка",
+        name: "Филе бедра цыпленка",
+        description: "Филе бедра без кожи и кости. Птица содержится в свободных птичниках, выращивается на натуральных зерновых кормах, что влияет положительно на вкус мяса. Филейная часть бедра обладает насыщенным вкусом и мясным ароматом.",
+        price: "400 руб. / 700 гр.",
+        specification: {
+            mass: "0,7 кг. (595-805 г.).",
+            term: "6 суток",
+            breed: "КОББ 500.",
+            origin: "Тверская область"
+        },
+        properties: {
+            energyValue: "135 ккал./565 кДж.",
+            nutritionalValue: "белки - 13,8 г., жиры - 8,7 г., углеводы - 0 г.; на 100 г."
+        }
+    },
+    {
+        id: 1,
+        imageName: 'goose-thigh',
+        alt: "Филе бедра гуся",
+        name: "Филе бедра гуся",
+        description: "Филе бедра гуся - это тонко нарезанный продукт, который понравится всем любителям сырокопченых продуктов. Необычный вкус, аппетитный аромат и тонкое послевкусия отличает сырокопченого гуся от других подобных продуктов.",
+        price: "400 руб. / 700 гр.",
+        specification: {
+            mass: "0,7 кг. (595-805 г.).",
+            term: "6 суток",
+            breed: "КОББ 500.",
+            origin: "Тверская область"
+        },
+        properties: {
+            energyValue: '135 ккал./565 кДж.',
+            nutritionalValue: "белки - 13,8 г., жиры - 8,7 г., углеводы - 0 г.; на 100 г."
+        }
+    }
+];
+
+const productsWithImages = products.map((product) => ({
+  ...product,
+  src: imageMap[product.imageName] || '',
+}));
+
+export default productsWithImages;

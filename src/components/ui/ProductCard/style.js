@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Img, P } from "@components/styled";
 
-export const Product = styled.li`
+export const Product = styled.div`
     display: grid;
     grid-template-columns: 248px 1fr;
     gap: 20px;

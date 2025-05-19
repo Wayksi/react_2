@@ -5,13 +5,13 @@ import MainPage from "@pages/MainPage/MainPage";
 import OrderPage from "@pages/OrderPage/OrderPage";
 import { Main } from "./style";
 
-function PageWrapper({ features }) {
+function PageWrapper({ ...prop }) {
     return (
         <>
             <Header />
             <Main>
                 {/* <MainPage features={features} /> */}
-                <OrderPage />
+                <OrderPage {...prop} />
             </Main>
             <Footer />
         </>

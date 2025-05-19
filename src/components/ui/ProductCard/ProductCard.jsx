@@ -2,21 +2,21 @@ import React from "react";
 import Title, { TitleSize } from "@ui/Title/Title";
 import { Product, ProductImage, ProductContentWrapper, TabContainer, Tab, Description, Price } from "./style";
 
-function ProductCard() {
+function ProductCard({ src, alt, name, description, price }) {
     return (
         <Product>
-            <ProductImage src="/" alt="fd" />
+            <ProductImage src={src} alt={alt} />
             <ProductContentWrapper>
-                <Title size={TitleSize.SMALL}>Филе бедра цыпленка</Title>
+                <Title size={TitleSize.SMALL}>{name}</Title>
                 <TabContainer>
-                    <Tab active>Описание</Tab>
+                    <Tab $active={true}>Описание</Tab>
                     <Tab>Характеристики</Tab>
                     <Tab>Свойства</Tab>
                 </TabContainer>
                 <Description>
-                    Филе бедра без кожи и кости. Птица содержится в свободных птичниках, выращивается на натуральных зерновых кормах, что влияет положительно на вкус мяса. Филейная часть бедра обладает насыщенным вкусом и мясным ароматом.
+                    {description}
                 </Description>
-                <Price>400 руб. / 700 гр.</Price>
+                <Price>{price}</Price>
             </ProductContentWrapper>
         </Product>
     );
