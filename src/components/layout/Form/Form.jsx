@@ -39,7 +39,7 @@ function Form() {
     return (
         <StyledForm onSubmit={handleSubmit}>
             <StyledFieldSet>
-                <StyledLegend>Выберите продукты</StyledLegend>
+                <StyledLegend>Выберите продукты</StyledLegend>                
                 {products.map((product) => (
                     <ProductCheckBox key={product}
                         label={product}

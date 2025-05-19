@@ -7,14 +7,16 @@ export const StyledForm = styled.form`
 `;
 
 export const StyledFieldSet = styled.fieldset`
-    padding: 24px 20px 12px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 63px 20px 12px;
     margin: 0;
     background-color: ${(props) => props.theme.colorWhite};
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 `;
 
 export const StyledLegend = styled.legend`
-    position: relative;
+    position: absolute;
     top: 24px;
     padding: 0;
     margin-bottom: 12px;
