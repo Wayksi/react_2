@@ -36,22 +36,7 @@ export const Tab = styled.button`
     font-size: 14px;
     line-height: 150%;
     font-weight: 400;
-    color: ${({ active }) => (active ? "white" : "#333333")};
-    background-color: ${({ active }) => (active ? "#88aa4d" : "##f6f6f6")};
+    color: ${({ $active }) => ($active ? "white" : "#333333")};
+    background-color: ${({ $active }) => ($active ? "#88aa4d" : "##f6f6f6")};
     cursor: pointer;
-`;
-
-export const Description = styled(P)`
-    font-size: 14px;
-    line-height: 150%;
-    font-weight: 400;
-`;
-
-export const Price = styled.span`
-    align-self: start;
-    padding: 4px 8px;
-    background-color: #D8ECFE;
-    font-size: 14px;
-    line-height: 150%;
-    font-weight: 700;
 `;

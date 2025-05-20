@@ -26,7 +26,7 @@ const products = [
         },
         properties: {
             energyValue: "135 ккал./565 кДж.",
-            nutritionalValue: "белки - 13,8 г., жиры - 8,7 г., углеводы - 0 г.; на 100 г."
+            nutritionValue: "белки - 13,8 г., жиры - 8,7 г., углеводы - 0 г.; на 100 г."
         }
     },
     {
@@ -44,7 +44,7 @@ const products = [
         },
         properties: {
             energyValue: '135 ккал./565 кДж.',
-            nutritionalValue: "белки - 13,8 г., жиры - 8,7 г., углеводы - 0 г.; на 100 г."
+            nutritionValue: "белки - 13,8 г., жиры - 8,7 г., углеводы - 0 г.; на 100 г."
         }
     }
 ];

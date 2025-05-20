@@ -1,8 +1,11 @@
 import React from "react";
 import Title, { TitleSize } from "@ui/Title/Title";
-import { Product, ProductImage, ProductContentWrapper, TabContainer, Tab, Description, Price } from "./style";
+import ProductDescription from "../ProductDescription/ProductDescription";
+import ProductSpecification from "../ProductSpecification/ProductSpecification";
+import ProductProperties from "../ProductProperties/ProductProperties";
+import { Product, ProductImage, ProductContentWrapper, TabContainer, Tab } from "./style";
 
-function ProductCard({ src, alt, name, description, price }) {
+function ProductCard({ src, alt, name, description, price, specification, properties }) {
     return (
         <Product>
             <ProductImage src={src} alt={alt} />
@@ -13,10 +16,9 @@ function ProductCard({ src, alt, name, description, price }) {
                     <Tab>Характеристики</Tab>
                     <Tab>Свойства</Tab>
                 </TabContainer>
-                <Description>
-                    {description}
-                </Description>
-                <Price>{price}</Price>
+                {/* <ProductDescription description={description} price={price} /> */}
+                {/* <ProductSpecification specification={specification} /> */}
+                <ProductProperties properties={properties} />
             </ProductContentWrapper>
         </Product>
     );
