@@ -1,20 +1,30 @@
-import React from "react";
-import { SliderWrapper, SliderList } from "./style";
+import React, { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel } from "swiper/modules";
+import "swiper/css";
+import { SliderWrapper } from "./style";
 import ProductCard from "@ui/ProductCard/ProductCard";
-import { Li } from "@components/styled";
 
-function Slider({ products }) {
-    console.log(products);
+function Slider({ products }) {  
+    const swiperRef = useRef(null);
     
     return (
         <SliderWrapper>
-            <SliderList>
-                {products.map((product) => (
-                    <Li key={product.id}>
+            <Swiper
+                direction="vertical"
+                spaceBetween={12}
+                slidesPerView="auto"
+                freeMode={true}
+                modules={[Mousewheel]}
+                mousewheel={true}
+                onSwiper={(swiper) => (swiperRef.current = swiper)}
+            >
+                {products.map((product, index) => (
+                    <SwiperSlide key={product.id} onClick={() => swiperRef.current?.slideTo(index)}>
                         <ProductCard {...product} />                
-                    </Li>
+                    </SwiperSlide>
                 ))}                
-            </SliderList>
+            </Swiper>
         </SliderWrapper>
     );
 };
