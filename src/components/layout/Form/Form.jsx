@@ -1,8 +1,7 @@
 import React from "react";
-import { StyledForm, StyledFieldSet, StyledLegend } from "./style";
+import { StyledForm, StyledFieldSet, StyledLegend, SubmitButton } from "./style";
 import ProductCheckBox from "@ui/ProductCheckBox/ProductCheckBox";
 import TextInput from "@ui/TextInput/TextInput";
-import Button from "@ui/Button/Button";
 import Price from "@ui/Price/Price";
 
 function Form({ products, selected, onSelectedChange }) {
@@ -16,7 +15,9 @@ function Form({ products, selected, onSelectedChange }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Выбранные продукты:", selected);
+
+        const selectedProducts = Object.entries(selected).filter(([, checked]) => checked).map(([slug]) => slug);        
+        console.log("Выбранные продукты:", selectedProducts);
     };
 
     return (
@@ -42,7 +43,7 @@ function Form({ products, selected, onSelectedChange }) {
                     onChange={handleChange}
                 />
                 <Price />
-                <Button>Купить</Button>
+                <SubmitButton type="submit">Купить</SubmitButton>
             </StyledFieldSet>
         </StyledForm>
     );
