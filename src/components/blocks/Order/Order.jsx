@@ -19,7 +19,10 @@ function Order({ products }) {
     
     return (
         <StyledOrder>
-            <Form products={products} selected={selected} onSelectedChange={setSelected} />
+            <Form products={products}
+            selected={selected}
+            onSelectedChange={setSelected}
+            selectedSlug={selectedSlug} />
             <Slider products={visibleProducts} />
         </StyledOrder>
     );

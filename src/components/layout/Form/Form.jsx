@@ -4,7 +4,7 @@ import ProductCheckBox from "@ui/ProductCheckBox/ProductCheckBox";
 import TextInput from "@ui/TextInput/TextInput";
 import Price from "@ui/Price/Price";
 
-function Form({ products, selected, onSelectedChange }) {
+function Form({ products, selected, onSelectedChange, selectedSlug }) {
     const handleChange = (e) => {
         const { value, checked } = e.target;
         onSelectedChange((prev) => ({
@@ -12,6 +12,13 @@ function Form({ products, selected, onSelectedChange }) {
         [value]: checked,
         }));
     };
+
+    const totalPrice = products.filter((product) => selectedSlug.includes(product.slug))
+                       .reduce((sum, product) => {
+                            const match = product.price.match(/^(\d+)/);
+                            const numericPrice = match ? parseInt(match[1], 10) : 0;
+                            return sum + numericPrice;
+                       }, 0);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -42,7 +49,7 @@ function Form({ products, selected, onSelectedChange }) {
                     placeholder="Введите адрес доставки"                    
                     onChange={handleChange}
                 />
-                <Price />
+                <Price total={totalPrice} />
                 <SubmitButton type="submit">Купить</SubmitButton>
             </StyledFieldSet>
         </StyledForm>
