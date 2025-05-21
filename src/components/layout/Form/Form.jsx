@@ -36,16 +36,20 @@ function Form({ products, selected, onSelectedChange, selectedSlug }) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const selectedProducts = Object.entries(selected).filter(([, checked]) => checked).map(([slug]) => slug);
+        const selectedProducts = Object.entries(selected)
+            .filter(([, checked]) => checked)
+            .map(([slug]) => {
+                const product = products.find(p => p.slug === slug);
+                return product ? product.name : slug;
+            });
 
-        const message = `
-                Электронная почта: ${email}
+        const message = 
+            `📧 Электронная почта: ${email}
 
-                Выбранные продукты:
-                ${selectedProducts.join(", ")}
+            🛒 Выбранные продукты:
+            ${selectedProducts.map(name => `   • ${name}`).join("\n")}
 
-                Цена заказа: ${totalPrice} руб.
-            `;
+            💰 Цена заказа: ${totalPrice} руб.`;
 
         alert(message);
     };
