@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Img, P } from "@components/styled";
+import { Img } from "@components/styled";
 
 export const Product = styled.div`
     display: grid;
@@ -15,13 +15,15 @@ export const Product = styled.div`
 
 export const ProductImage = styled(Img)`
     width: 248px;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
 `;
 
 export const ProductContentWrapper = styled.div`
+    position: relative;
     display: flex;
-    flex-direction: column;
-    gap: 16px;
+    flex-direction: column; 
+    gap: 16px;   
 `;
 
 export const TabContainer = styled.div`
@@ -39,4 +41,15 @@ export const Tab = styled.button`
     color: ${({ $active }) => ($active ? "white" : "#333333")};
     background-color: ${({ $active }) => ($active ? "#88aa4d" : "##f6f6f6")};
     cursor: pointer;
+`;
+
+export const Price = styled.span`
+    position: absolute;
+    bottom: 0;
+    align-self: start;
+    padding: 4px 8px;
+    background-color: #D8ECFE;
+    font-size: 14px;
+    line-height: 150%;
+    font-weight: 700;
 `;

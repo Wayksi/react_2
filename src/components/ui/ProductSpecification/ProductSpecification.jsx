@@ -1,20 +1,16 @@
 import React from "react";
 import { SpecificationList, SpecificationName, SpecificationItem } from "./style";
 
-function ProductSpecification({ specification }) {
-const specName = {
-    mass: "Масса:",
-    term: "Срок годности:",
-    breed: "Порода:",
-    origin: "Место происхождения:",
-  };
-
+function ProductSpecification({ list = [], delimeter = ": " }) {
     return (
         <SpecificationList>
-            {Object.entries(specification).map(([spec, value]) => (
-                <SpecificationItem key={spec}>
-                    <SpecificationName>{specName[spec] || spec}</SpecificationName>
-                    {value}
+            {list.map((option, index) => (
+                <SpecificationItem key={`tab${index * 10}`}>
+                    <SpecificationName>
+                        {option.property}
+                        {delimeter}
+                    </SpecificationName>
+                    {option.value}
             </SpecificationItem> 
             ))}                       
         </SpecificationList>

@@ -4,7 +4,7 @@ import Form from "@layout/Form/Form";
 import Slider from "@layout/Slider/Slider";
 
 function Order({ products }) {
-    const defaultSelected = ["chicken-thigh", "goose-thigh", "beef-thigh"];
+    const defaultSelected = ["chicken-thigh", "goose-thigh", "cheese-AMST"];
     
     const [selected, setSelected] = useState(() =>
         defaultSelected.reduce((acc, p) => {

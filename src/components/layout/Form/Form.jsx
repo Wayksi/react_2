@@ -27,10 +27,8 @@ function Form({ products, selected, onSelectedChange, selectedSlug }) {
     const isFormValid = isValidEmail(email) && selectedSlug.length > 0;
 
     const totalPrice = products.filter((product) => selectedSlug.includes(product.slug))
-        .reduce((sum, product) => {
-            const match = product.price.match(/^(\d+)/);
-            const numericPrice = match ? parseInt(match[1], 10) : 0;
-            return sum + numericPrice;
+        .reduce((sum, product) => {            
+            return sum + product.price;
         }, 0);
 
     const handleSubmit = (e) => {

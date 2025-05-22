@@ -1,39 +1,34 @@
 import React from "react";
-import { useState } from "react";
-import Title, { TitleSize } from "@ui/Title/Title";
-import ProductDescription from "../ProductDescription/ProductDescription";
+import Title, { TitleSize } from "../Title/Title";
 import ProductSpecification from "../ProductSpecification/ProductSpecification";
-import ProductProperties from "../ProductProperties/ProductProperties";
-import { Product, ProductImage, ProductContentWrapper, TabContainer, Tab } from "./style";
+import Tabs from "../Tabs/Tabs";
+import { Product, ProductImage, ProductContentWrapper, Price} from "./style";
 
-function ProductCard({ src, alt, name, description, price, specification, properties }) {
-    const [activeTab, setActiveTab] = useState("description");
-
-    const renderTabContent = () => {
-        switch (activeTab) {
-            case "description":
-                return <ProductDescription description={description} price={price} />;
-            case "specification":
-                return <ProductSpecification specification={specification} />;
-            case "properties":
-                return <ProductProperties properties={properties} />;
-            default: 
-                return null;
+function ProductCard({ product }) {
+    const tabList = [
+        {
+            title: "Oписание",
+            content: product.description
+        },
+        {
+            title: "Характеристики",
+            content: <ProductSpecification list={product.specification} />
+        },
+        {
+            title: "Свойства",
+            content: <ProductSpecification list={product.properties} />
         }
-    };
+    ];
 
     return (
         <Product>
-            <ProductImage src={src} alt={alt} />
+            <ProductImage src={product.src} alt={product.name} />
             <ProductContentWrapper>
-                <Title size={TitleSize.SMALL}>{name}</Title>
-                <TabContainer>
-                    <Tab $active={activeTab === "description"} onClick={() => setActiveTab("description")}>Описание</Tab>
-                    <Tab $active={activeTab === "specification"} onClick={() => setActiveTab("specification")}>Характеристики</Tab>
-                    <Tab $active={activeTab === "properties"} onClick={() => setActiveTab("properties")}>Свойства</Tab>
-                </TabContainer>
-                
-                {renderTabContent()}
+                <Title size={TitleSize.SMALL}>{product.name}</Title>
+                <Tabs maxContentHeiht="105px" tabList={tabList}></Tabs> 
+                <Price>
+                    {product.price} руб. / {product.weight} гр.
+                </Price>               
             </ProductContentWrapper>
         </Product>
     );

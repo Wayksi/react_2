@@ -17,11 +17,14 @@ function Slider({ products }) {
                 freeMode={true}
                 modules={[Mousewheel]}
                 mousewheel={true}
+                pagination={{
+                type: "fraction"
+        }}
                 onSwiper={(swiper) => (swiperRef.current = swiper)}
             >
                 {products.map((product, index) => (
                     <SwiperSlide key={product.id} onClick={() => swiperRef.current?.slideTo(index)}>
-                        <ProductCard {...product} />                
+                        <ProductCard product={product} />                
                     </SwiperSlide>
                 ))}                
             </Swiper>
