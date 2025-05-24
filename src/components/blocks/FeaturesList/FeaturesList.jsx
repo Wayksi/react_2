@@ -2,6 +2,7 @@ import React from "react";
 import FeatureCard from "@ui/FeatureCard/FeatureCard";
 import { Ul, Li } from "@components/styled";
 import { Features, StyledButton, StyledTitle } from "./style";
+import { AppRoute } from "/src/const";
 
 function FeaturesList({ features }) {
     return features && features.length ? (
@@ -14,7 +15,7 @@ function FeaturesList({ features }) {
                     </Li>
                 ))}
             </Ul>
-            <StyledButton>Купить</StyledButton>
+            <StyledButton link={AppRoute.BUY}>Купить</StyledButton>
         </Features>
     ) : null;
 }
