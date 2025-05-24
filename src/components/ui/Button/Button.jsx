@@ -12,7 +12,7 @@ function Button({ children,
         <StyledButton
             {...props}
             $maxWidth={maxWidth}
-            {...(link ? { href: link } : { as: "button", onClick, type: "button" })}
+            {...(link ? { to: link } : { as: "button", onClick, type: "button" })}
             className={className}
         >
             {children}

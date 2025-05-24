@@ -1,10 +1,15 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
-export const StyledLogo = styled.a`
+const logoStyle = css`
   display: flex;
   margin-left: -4px;
   height: 44px;
   align-items: center;
+`;
+
+export const StyledLogo = styled(Link)`
+  ${logoStyle}
   text-decoration: none;
   color: ${(props) => props.theme.colorBlackForText};
 
@@ -14,6 +19,10 @@ export const StyledLogo = styled.a`
     text-decoration: none;
     color: ${(props) => props.theme.colorBlackForText};
   }
+`;
+
+export const StyledLogoMainPage = styled.span`
+  ${logoStyle}
 `;
 
 export const Text = styled.span`
