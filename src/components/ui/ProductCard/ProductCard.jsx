@@ -1,5 +1,5 @@
 import React from "react";
-import Title, { TitleSize } from "../Title/Title";
+import Title, { TitleSize } from "../Title/title";
 import ProductSpecification from "../ProductSpecification/ProductSpecification";
 import Tabs from "../Tabs/Tabs";
 import { Product, ProductImage, ProductContentWrapper, Price} from "./style";
