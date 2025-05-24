@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Section } from "@components/styled";
-import Title from "@ui/Title/Title";
+import Title from "@ui/Title/title";
 import Button from "@ui/Button/Button";
 
 export const Features = styled(Section)`

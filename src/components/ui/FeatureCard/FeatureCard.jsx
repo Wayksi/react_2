@@ -1,5 +1,5 @@
 import React from "react";
-import Title, { TitleSize } from "@ui/Title/Title";
+import Title, { TitleSize } from "@ui/Title/title";
 import { Feature, Image, Owner, Header, Text } from "./style";
 
 function FeatureCard({ title, owner, about, isNegative, image }) {
