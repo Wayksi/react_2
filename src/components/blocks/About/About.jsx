@@ -1,5 +1,5 @@
 import React from "react";
-import Title, { TitleSize } from "@ui/Title/Title"
+import Title, { TitleSize } from "@ui/Title/title"
 import { StyledAbout, Text } from "./style";
 
 function About() {
